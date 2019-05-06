@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework#2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>
+    Homework #2 Random Address
+  </h1>
+  <button id="button1">
+    Random Address
+  </button>
+  <button id="clear">Clear
+  </button>
+  <p>
+    
+  </p>
+
+
+  <script>
+  let streetNumber = ["12", "14", "16", "18"];
+let streetName = ["Crawford", "Kneeland", "Flatbush", "Grand Concourse"];
+let city = ["Bronx", "Yonkers", "Queens", "Brooklyn"];
+let state = ["New York", "Nebraska", "California", "Texas"];
+let zipCode = ["10704", "10468", "11106", "12345"];
+
+let button1 = $("#button1");
+let clear = $("#clear");
+
+var randomStreetNumber =
+  streetNumber[Math.floor(Math.random() * streetNumber.length)];
+
+var randomStreetName =
+  streetName[Math.floor(Math.random() * streetName.length)];
+
+var randomCity = city[Math.floor(Math.random() * city.length)];
+
+var randomState = state[Math.floor(Math.random() * state.length)];
+
+var randomZipCode = zipCode[Math.floor(Math.random() * zipCode.length)];
+
+let randomAddress =
+  randomStreetNumber +
+  " " +
+  randomStreetName +
+  " " +
+  randomCity +
+  " " +
+  randomState +
+  " " +
+  randomZipCode;
+
+console.log(randomAddress)
+
+button1.click(button1Clicked);
+function button1Clicked() {
+  $("p").text(randomAddress);
+}
+
+clear.click(clearClicked);
+function clearClicked() {
+  $("p").text("I need help changing the address :( ");
+}
+
+  </script>
+  
+</body>
+</html>
